@@ -26,3 +26,6 @@ hs_err_pid*
 
 /onlineshopping/target/
 /shoppingbackend/target/
+
+/onlineshopping/bin/
+/shoppingbackend/bin/
