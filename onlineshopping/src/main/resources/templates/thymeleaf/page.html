@@ -1,5 +1,5 @@
-
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
 <head>
 
     <meta charset="utf-8">
@@ -10,30 +10,39 @@
     <title th:text="${'Online Shopping - ' + testModel.name+ '!'}"></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+        th:href="@{/bootstrap/css/bootstrap.min.css}">
 
     <!-- Custom styles for this template -->
     <link href="../../static/shop-homepage.css" rel="stylesheet" th:href="@{/shop-homepage.css}">
 
+    <link href="../../static/bootswatch.css" rel="stylesheet" th:href="@{/bootswatch.css}">
+
 </head>
 
 <body>
-    <!-- Navigation -->
-    <div th:insert="thymeleaf/shared/navbar :: navbar"></div>
-    
-    <!-- Page Content -->
-    <div th:if="${testModel.isUserClickHome()}" th:insert="thymeleaf/home :: home"></div>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <div th:insert="thymeleaf/shared/navbar :: navbar"></div>
 
-    <div th:if="${testModel.isUserClickContact()}" th:insert="thymeleaf/contact :: contact"></div>
+        <div class="content">
+            <!-- Page Content -->
+            <div th:if="${testModel.isUserClickHome()}" th:insert="thymeleaf/home :: home"></div>
 
-    <div th:if="${testModel.isUserClickAbout()}" th:insert="thymeleaf/about :: about"></div>
-    <!-- Footer -->
-    <div th:insert="thymeleaf/shared/footer :: footer"></div>
+            <div th:if="${testModel.isUserClickContact()}" th:insert="thymeleaf/contact :: contact"></div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="../../static/jquery/jquery.min.js" th:href="@{/jquery/jquery.min.js}"></script>
-    <script src="../../static/bootstrap/js/bootstrap.bundle.min.js" th:href="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
-    <!--<script scr="../../js/myapp.js" th:href="@{/js/myapp.js}"></script>-->
+            <div th:if="${testModel.isUserClickAbout()}" th:insert="thymeleaf/about :: about"></div>
+        </div>
+        <!-- Footer -->
+        <div th:insert="thymeleaf/shared/footer :: footer"></div>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="../../static/jquery/jquery.min.js" th:href="@{/jquery/jquery.min.js}"></script>
+        <script src="../../static/bootstrap/js/bootstrap.bundle.min.js"
+            th:href="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <!--<script scr="../../js/myapp.js" th:href="@{/js/myapp.js}"></script>-->
+
+    </div>
 </body>
 
 </html>
