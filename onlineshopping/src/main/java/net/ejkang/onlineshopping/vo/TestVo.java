@@ -4,6 +4,9 @@ public class TestVo {
     private Long mbrNo;
     private String id;
     private String name;
+    private boolean userClickHome;
+    private boolean userClickAbout;
+    private boolean userClickContact;
 
     public Long getMbrNo() {
         return mbrNo;
@@ -27,6 +30,30 @@ public class TestVo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isUserClickHome() {
+        return userClickHome;
+    }
+
+    public void setUserClickHome(boolean userClickHome) {
+        this.userClickHome = userClickHome;
+    }
+
+    public boolean isUserClickAbout() {
+        return userClickAbout;
+    }
+
+    public void setUserClickAbout(boolean userClickAbout) {
+        this.userClickAbout = userClickAbout;
+    }
+
+    public boolean isUserClickContact() {
+        return userClickContact;
+    }
+
+    public void setUserClickContact(boolean userClickContact) {
+        this.userClickContact = userClickContact;
     }
 
 }

@@ -15,13 +15,36 @@ public class PageController {
     public String page(Model model) {
         TestVo testModel = new TestVo();
         testModel.setId("ss");
-        testModel.setName("ejKang");
+        testModel.setName("Home");
+        testModel.setUserClickHome(true);
         model.addAttribute("testModel", testModel);
 
         return "thymeleaf/page";
     }
 
-    @RequestMapping("/test")
+    @RequestMapping("/about")
+    public String about(Model model) {
+        TestVo testModel = new TestVo();
+        testModel.setId("ss");
+        testModel.setName("About Us");
+        testModel.setUserClickAbout(true);
+        model.addAttribute("testModel", testModel);
+
+        return "thymeleaf/page";
+    }
+
+    @RequestMapping("/contact")
+    public String contact(Model model) {
+        TestVo testModel = new TestVo();
+        testModel.setId("ss");
+        testModel.setName("Contact Us");
+        testModel.setUserClickContact(true);
+        model.addAttribute("testModel", testModel);
+
+        return "thymeleaf/page";
+    }
+
+    @RequestMapping("/test") // test of RequestParam
     public String test(@RequestParam(value="greeting", required = false)String greeting, Model model) {
         TestVo testModel = new TestVo();
         testModel.setId(greeting);
@@ -31,14 +54,15 @@ public class PageController {
         return "thymeleaf/page";
     }
 
-    @RequestMapping("/pathvariable/{greeting}")
+    @RequestMapping("/pathvariable/{greeting}") // test of PathVariable
     public String pathvariable(@PathVariable("greeting")String greeting, Model model) {
         TestVo testModel = new TestVo();
         testModel.setId(greeting);
         testModel.setName("ejKang");
+        testModel.setUserClickHome(true);
         model.addAttribute("testModel", testModel);
 
-        return "thymeleaf/page";
+        return "thymeleaf/page"; 
     }
 
 

@@ -18,21 +18,22 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <div th:insert="thymeleaf/shared/navbar :: navbar"></div>
     
-
     <!-- Page Content -->
-    <div th:insert="thymeleaf/home :: home"></div>
+    <div th:if="${testModel.isUserClickHome()}" th:insert="thymeleaf/home :: home"></div>
 
+    <div th:if="${testModel.isUserClickContact()}" th:insert="thymeleaf/contact :: contact"></div>
+
+    <div th:if="${testModel.isUserClickAbout()}" th:insert="thymeleaf/about :: about"></div>
     <!-- Footer -->
     <div th:insert="thymeleaf/shared/footer :: footer"></div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../../static/jquery/jquery.min.js" th:href="@{/jquery/jquery.min.js}"></script>
     <script src="../../static/bootstrap/js/bootstrap.bundle.min.js" th:href="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
-   
+    <!--<script scr="../../js/myapp.js" th:href="@{/js/myapp.js}"></script>-->
 </body>
 
 </html>
