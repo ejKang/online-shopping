@@ -2,12 +2,12 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragment="sidebar" >
+<div th:fragment="sidebar">
     <h1 class="my-4">Shop Name</h1>
     <div class="list-group">
-        <a href="#" class="list-group-item">11Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
+        <th:block th:each="category : ${categories}">
+            <a href="#" class="list-group-item" th:text='${category.name}'></a>
+        </th:block>
     </div>
 </div>
 
