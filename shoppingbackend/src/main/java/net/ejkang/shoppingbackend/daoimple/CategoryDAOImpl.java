@@ -2,6 +2,8 @@ package net.ejkang.shoppingbackend.daoimple;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -42,6 +44,15 @@ public class CategoryDAOImpl implements CategoryDAO {
     @Override
     public List<Category> list() {
         return categories;
+    }
+
+    @Override
+    public Category get(int id) {
+        List<Category> list = categories.stream().filter(c-> (c.getId() == id)).collect(Collectors.toList());
+        if (list.size() > 0) 
+            return list.get(0);
+        else 
+            return null;
     }
     
 }

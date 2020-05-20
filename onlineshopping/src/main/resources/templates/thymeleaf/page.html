@@ -32,6 +32,8 @@
             <div th:if="${testModel.isUserClickContact()}" th:insert="thymeleaf/contact :: contact"></div>
 
             <div th:if="${testModel.isUserClickAbout()}" th:insert="thymeleaf/about :: about"></div>
+
+            <div th:if="${userClickAllProducts == true || userClickCategoryProducts == true}" th:insert="thymeleaf/listProducts :: listProducts"></div>
         </div>
         <!-- Footer -->
         <div th:insert="thymeleaf/shared/footer :: footer"></div>

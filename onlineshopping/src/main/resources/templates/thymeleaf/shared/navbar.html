@@ -20,7 +20,7 @@
                     <a class="nav-link" th:href="@{/about}" th:classappend="${testModel.isUserClickAbout()} ? active : ''">About</a>
                 </li>
                 <li id="listProducts" class="nav-item">
-                    <a class="nav-link" th:href="@{/listProducts}">View Products</a>
+                    <a class="nav-link" th:href="@{/show/all/products}" th:classappend="${userClickAllProducts} ? active : ''">View Products</a>
                 </li>
                 <li id="contact" class="nav-item">
                     <a class="nav-link" th:href="@{/contact}" th:classappend="${testModel.isUserClickContact()} ? active : ''">Contact</a>

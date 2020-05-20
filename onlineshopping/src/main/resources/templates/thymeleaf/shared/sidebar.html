@@ -6,7 +6,8 @@
     <h1 class="my-4">Shop Name</h1>
     <div class="list-group">
         <th:block th:each="category : ${categories}">
-            <a href="#" class="list-group-item" th:text='${category.name}'></a>
+            <a th:href="@{'/show/category/'+${category.id}+ '/products'}" class="list-group-item" 
+            th:id="'a_' + ${category.name}" th:text='${category.name}'></a>
         </th:block>
     </div>
 </div>
