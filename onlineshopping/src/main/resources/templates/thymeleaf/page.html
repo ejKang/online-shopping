@@ -2,6 +2,10 @@
 
 <head>
 
+    <script type="text/javascript" th:inline="javascript">
+        window.menu = /*[[${testModel.name}]]*/ s;
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -39,12 +43,13 @@
         <div th:insert="thymeleaf/shared/footer :: footer"></div>
 
         <!-- Bootstrap core JavaScript -->
-        <script src="../../static/jquery/jquery.min.js" th:href="@{/jquery/jquery.min.js}"></script>
-        <script src="../../static/bootstrap/js/bootstrap.bundle.min.js"
-            th:href="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
-        <!--<script scr="../../js/myapp.js" th:href="@{/js/myapp.js}"></script>-->
-
+        <script th:src="@{/jquery/jquery.min.js}"></script>
+        <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script th:src="@{/jquery/myapp.js}"></script>
     </div>
 </body>
 
+
+
 </html>
+
