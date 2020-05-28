@@ -2,16 +2,21 @@ package net.ejkang.shoppingbackend.daoimple;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.ejkang.shoppingbackend.dao.CategoryDAO;
 import net.ejkang.shoppingbackend.dto.Category;
 
 @Repository("CategoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
+
+    @Autowired
+    SessionFactory sessionFactory;
 
     private static List<Category> categories = new ArrayList<>();
 
@@ -53,6 +58,19 @@ public class CategoryDAOImpl implements CategoryDAO {
             return list.get(0);
         else 
             return null;
+    }
+
+    @Transactional
+    @Override
+    public boolean add(Category category) {
+        
+        try {
+            sessionFactory.getCurrentSession().persist(category);
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
     
 }
