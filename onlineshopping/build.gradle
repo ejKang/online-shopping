@@ -28,7 +28,14 @@ dependencies {
 	}
 
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	
+	runtime group: 'org.springframework', name: 'spring-orm', version: '4.0.3.RELEASE'
+	runtime group: 'com.h2database', name: 'h2', version: '1.4.193'
+	runtime group: 'org.hibernate', name: 'hibernate-core', version: '5.4.16.Final'
+	runtime group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.1.1'
+	
 	compile project(':shoppingbackend')
+	
 }
 
 test {

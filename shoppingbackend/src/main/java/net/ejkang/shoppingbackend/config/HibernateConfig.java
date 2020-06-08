@@ -6,35 +6,35 @@ import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Value;
+// import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.orm.hibernate3.HibernateTransactionManager;
+// import org.springframework.context.annotation.PropertySource;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan(basePackages = { "net.ejkang.shoppingbackend.dto" })
 @EnableTransactionManagement
-@PropertySource("classpath:connection.properties")
+// @PropertySource("classpath:connection1.properties")
 public class HibernateConfig {
 
-    @Value("${jdbc.url}")
-    private String DATABASE_URL;
+    // @Value("${jdbc.url}")
+    private String DATABASE_URL = "jdbc:h2:tcp://localhost/~/onlineshopping";
 
-    @Value("${jdbc.drive}")
-    private String DATABASE_DRIVE;
+    // @Value("${jdbc.drive}")
+    private String DATABASE_DRIVE = "org.h2.Driver";
 
-    @Value("${jdbc.dialeck}")
-    private String DATABASE_DIALECK;
+    // @Value("${jdbc.dialeck}")
+    private String DATABASE_DIALECK = "org.hibernate.dialect.H2Dialect";
 
-    @Value("${jdbc.username}")
-    private String DATABASE_USERNAME;
+    // @Value("${jdbc.username}")
+    private String DATABASE_USERNAME = "sa";
 
-    @Value("${jdbc.password}")
-    private String DATABASE_PASSWORD;
+    // @Value("${jdbc.password}")
+    private String DATABASE_PASSWORD = "";
 
     @Bean
     public DataSource getDataSource() {

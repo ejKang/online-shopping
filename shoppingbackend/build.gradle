@@ -1,6 +1,4 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.7.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 }
 
@@ -20,17 +18,24 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	compile group: 'org.springframework', name: 'spring-context', version: '4.2.0.RELEASE'
 	compile group: 'org.springframework', name: 'spring-orm', version: '4.0.3.RELEASE'
 	compile group: 'com.h2database', name: 'h2', version: '1.4.193'
 	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.16.Final'
 	compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.1.1'
+	
+	runtime group: 'org.springframework', name: 'spring-context', version: '4.2.0.RELEASE'
+	runtime group: 'org.springframework', name: 'spring-orm', version: '4.0.3.RELEASE'
+	runtime group: 'com.h2database', name: 'h2', version: '1.4.193'
+	runtime group: 'org.hibernate', name: 'hibernate-core', version: '5.4.16.Final'
+	runtime group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.1.1'
 
+	testCompile group: 'junit', name: 'junit', version: '4.4'
+	// testRuntime group: 'junit', name: 'junit', version: '4.4'
+	testImplementation("junit:junit:4.13")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
 }
 
 test {
