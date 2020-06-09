@@ -22,7 +22,7 @@ public class CategoryTestCase {
         context.scan("net.ejkang.shoppingbackend");
         context.refresh();
 
-        // categoryDAO = (CategoryDAO) context.getBean("CategoryDAO");
+        categoryDAO = (CategoryDAO) context.getBean("CategoryDAO");
     }
 
     @Test

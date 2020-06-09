@@ -24,7 +24,7 @@ public class PageController {
         testModel.setName("Home");
         testModel.setUserClickHome(true);
         model.addAttribute("testModel", testModel);
-        // model.addAttribute("categories", categoryDAO.list());
+        model.addAttribute("categories", categoryDAO.list());
         return "thymeleaf/page";
     }
 
@@ -36,7 +36,7 @@ public class PageController {
         testModel.setUserClickHome(true);
         model.addAttribute("userClickAllProducts", true);
         model.addAttribute("testModel", testModel);
-        // model.addAttribute("categories", categoryDAO.list());
+        model.addAttribute("categories", categoryDAO.list());
         return "thymeleaf/page";
     }
 
@@ -52,7 +52,7 @@ public class PageController {
         model.addAttribute("userClickCategoryProducts", true);
         model.addAttribute("testModel", testModel);
         model.addAttribute("category", category);
-        // model.addAttribute("categories", categoryDAO.list());
+        model.addAttribute("categories", categoryDAO.list());
         return "thymeleaf/page";
     }
 
