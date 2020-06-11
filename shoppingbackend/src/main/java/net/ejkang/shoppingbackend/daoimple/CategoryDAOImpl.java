@@ -25,7 +25,7 @@ public class CategoryDAOImpl implements CategoryDAO {
         Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
         query.setParameter("active", true); 
         List<Category> temp = query.getResultList();
-        return temp;//(List<Category>)query.getResultList();
+        return temp;
     }
 
     @Override
