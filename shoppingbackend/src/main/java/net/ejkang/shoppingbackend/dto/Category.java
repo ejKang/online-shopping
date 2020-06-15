@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Category {
     @Id
@@ -14,6 +16,7 @@ public class Category {
 
     private String name;
 
+    @JsonIgnore
     private String description;
 
     @Column(name = "image_url")
